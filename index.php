@@ -6,7 +6,7 @@
 <div><title>cadastrar</title></div>
 
 <body>
-     <form name="signup" method="post" >
+     <form name="signup" method="post" action="cadastro.php" >
         
 
         <input type="text"  name="nome" id="nomeJS" placeholder="Nome" required> <br/><br/> 
