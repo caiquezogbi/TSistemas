@@ -21,7 +21,9 @@
   
 <!-- Menu  navbar -->
       
-  
+<a href="consulta.php"> 
+   <button class="btn btn-outline-info buttons">Marcar Consulta</button>   <!--botao ok-->
+</a>
     <div class="topo">
       <div>
         <h2><i class="material-icons" style="font-size: 32px; color: green">add_circle_outline</i> Cadastro de Paciente</h2>

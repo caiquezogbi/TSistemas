@@ -18,9 +18,10 @@ CREATE TABLE `consulta` (
   `id_consulta` int(11) NOT NULL AUTO_INCREMENT,
   `sintomas` varchar(255) DEFAULT NULL,
   `historico` varchar(255) DEFAULT NULL,
-  `data` date,
+  `dataConsulta` varchar(15) DEFAULT NULL,
   `medico`varchar(255) DEFAULT NULL,
   `observacoes`varchar(255) DEFAULT NULL,
+  `paciente_id` int (11),
   PRIMARY KEY (`id_consulta`),
-  CONSTRAINT `idCadastro` FOREIGN KEY (`id_consulta`) REFERENCES `usuario` (`id_cadastro`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `paciente_id` FOREIGN KEY (`id_consulta`) REFERENCES `usuario` (`id_cadastro`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB;

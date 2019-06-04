@@ -1,4 +1,7 @@
-</html>
+<?php
+  include("conexao.php");
+  ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,84 +27,64 @@
   
     <div class="topo">
       <div>
-        <h2><i class="material-icons" style="font-size: 32px; color: green">add_circle_outline</i> Cadastro de Paciente</h2>
+        <h2><i class="material-icons" style="font-size: 32px; color: green">add_circle_outline</i>Consultas</h2>
       </div>
     </div>
 
     <div class=" flex-center-center">
-      <form method="POST" action="consulta-classe.php"><!-- Inicio do formulario -->
-         <div class="informacoesesquerda">
-                        
+      <form method="POST" action="consulta-classe.php"><!-- Inicio do formulario -->               
         <div class="row bccu">
             <div class="form-group col-md-3">
-                <label for="selPaciente">Empresa</label>
-                <input list="nome" name="selPaciente"  class="form-control"/>  
-                <datalist id="nome">
+              <label for="sel-paciente">Nome do paciente</label><span class="asterisco-ver">*</span>
+              <input list="nome" name="selPaciente"  class="form-control"/>  
+              <datalist id="nome">
                     <?php
                         $select_paciente = "CALL `clinica`.`PROC_SEL_PACIENTE`();";
                         $res_select = mysqli_query($conexao, $select_paciente);
                         while($pac = mysqli_fetch_array($res_select)) {
-                            $selPaciente=$pac['nomeFantasia_empresa'];
+                            $selPaciente=$pac['nome'];
                             echo "<option value='$selPaciente'> $selPaciente</option>";
                         }   
                     ?>
                 </datalist>
             </div>
-        </div>
-        <div class="form-row">
+                
             <div class="form-group col-md-4">
-               <label>Nome do paciente </label><span class="asterisco-ver">*</span>
-               <input type="text" class="form-control" name="nomePaciente" id="nomeEmpresaJS" placeholder="Nome do paciente">
+               <label>Nome do Médico </label>
+               <input type="text" class="form-control" name="nomeMedico" id="nomeEmpresaJS" placeholder="Nome do Médico">
             </div>
             <div>   
-               <label >CPF </label><span class="asterisco-ver">*</span>
-               <input type="text" class="form-control" name="cpf" id="cpfJS" placeholder="CPF">
+               <label >Data da Consulta </label><span class="asterisco-ver">*</span>
+               <input type="date" class="form-control" name="dataConsulta" id="cpfJS" placeholder="Data">
             </div>  
-
-            <div class="form-group col-md-5"> 
-                <label for="responsavel">Responsável </label><span class="asterisco-ver">*</span>
-                <input type="text" class="form-control" name="responsavel" id="responsavelJS" placeholder="Responsável">
-            </div>
+            <a href="index.php"> <!--nao esta funcionando--> 
+              <button class="btn btn-outline-info buttons">Cadastrar Paciente</button>   
+            </a>
+        </div>
+            
          </div>
 
          <div class="form-row">
-            <div class="form-group col-md-4">  
-              <label for="descAtv">Convênio </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="convenio" id="convenioJS" placeholder="Convênio">
+            <div class="form-group col-md-3"> 
+                <label for="responsavel">Sintomas </label>
+                <textarea class="form-control" name="sintomas" id="exampleFormControlTextarea3" rows="7" placeholder="Sintomas"></textarea>
+            </div>
+
+            <div class="form-group col-md-3">  
+              <label for="descAtv">Histórico </label>
+              <textarea class="form-control"  name="historico" id="exampleFormControlTextarea3" rows="7" placeholder="Histórico"></textarea>
             </div>  
 
-            <div class="form-group col-md-4">
-              <label for="telefone">Telefone </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control ttinput" name="telefone" id="telefoneJS" placeholder="Telefone">
-            </div>
-
-            <div class="form-group col-md-4">
-              <label for="telefone">Data de Nascimento </label><span class="asterisco-ver">*</span>
-              <input type="date" class="form-control ttinput" name="dataNascimento" id="dataNascimentoJS" placeholder="Data de Nascimento">
-            </div>
-         </div>
-
-         <div class="form-row">
-            <div class="form-groupcol-md-9">
-              <label for="Endereco">Endereço </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="endereco" id="enderecoJS" placeholder="Endereço">
-            </div> 
-
             <div class="form-group col-md-3">
-              <label for="bairro">Bairro </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="bairro" id="bairroJS" placeholder="Bairro">
+              <label for="telefone">Observações </label>
+              <textarea class="form-control" id="exampleFormControlTextarea3" rows="7" placeholder="Observações" name="observacoes"></textarea>
             </div>
-
-            <div class="form-group col-md-3">
-              <label for="cidade">Cidade </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="cidade" id="cidadeJS" placeholder="Cidade">
-            </div>
-         </div>  
-
+          </div>
+           
           
           <div class="form-group buttons">
             <input type="submit" value="Cancelar" class="btn btn-outline-danger buttons">
-            <input type="submit" value="Adicionar" class="btn btn-success buttons">           
+            <input type="submit" value="Salvar" class="btn btn-success buttons">           
           </div>
 
         
