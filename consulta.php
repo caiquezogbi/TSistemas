@@ -1,4 +1,4 @@
-
+</html>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cadastro de paciente</title>
+  <title>Consultas</title>
 
   <!- Imports -!>
     <link rel="stylesheet" type="text/css" href="./css/css-cadastroEmpresa.css">
@@ -29,10 +29,26 @@
     </div>
 
     <div class=" flex-center-center">
-      <form method="POST" action="cadastro.php"><!-- Inicio do formulario -->
+      <form method="POST" action="consulta-classe.php"><!-- Inicio do formulario -->
          <div class="informacoesesquerda">
                         
-         <div class="form-row">
+        <div class="row bccu">
+            <div class="form-group col-md-3">
+                <label for="selPaciente">Empresa</label>
+                <input list="nome" name="selPaciente"  class="form-control"/>  
+                <datalist id="nome">
+                    <?php
+                        $select_paciente = "CALL `clinica`.`PROC_SEL_PACIENTE`();";
+                        $res_select = mysqli_query($conexao, $select_paciente);
+                        while($pac = mysqli_fetch_array($res_select)) {
+                            $selPaciente=$pac['nomeFantasia_empresa'];
+                            echo "<option value='$selPaciente'> $selPaciente</option>";
+                        }   
+                    ?>
+                </datalist>
+            </div>
+        </div>
+        <div class="form-row">
             <div class="form-group col-md-4">
                <label>Nome do paciente </label><span class="asterisco-ver">*</span>
                <input type="text" class="form-control" name="nomePaciente" id="nomeEmpresaJS" placeholder="Nome do paciente">

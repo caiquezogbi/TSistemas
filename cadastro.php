@@ -1,22 +1,21 @@
 <?php
 include ("conexao.php");
 
-$Nome= $_POST ['nome'];
-$Cpf = $_POST ['cpf'];
-$PlanoDeSaude = $_POST ['planoDeSaude'];
-$DataDeNascimento = $_POST ['dataDeNascimento'];
-$Telefone = $_POST ['telefone'];
-
-//echo "$Nome, $Cpf, $PlanoDeSaude, $DataDeNascimento, $Telefone";
-
-
-//$result= mysqli_query ($conexao, $sql);
-
-
-$sql = mysqli_query ("INSERT INTO usuario (Nome, Cpf, PlanoDeSaude, DataDeNascimento, Telefone) VALUES
-                         ('$Nome', '$Cpf', '$PlanoDeSaude', '$DataDeNascimento', '$Telefone')");
+$nome= $_POST ['nomePaciente'];
+$cpf = $_POST ['cpf'];
+$convenio = $_POST ['convenio'];
+$dataNascimento = $_POST ['dataNascimento'];
+$telefone = $_POST ['telefone'];
+$responsavel = $_POST ['responsavel'];
+$endereco = $_POST ['endereco'];
+$bairro = $_POST ['bairro'];
+$cidade = $_POST ['cidade'];
 
 
+$insertPaciente = "CALL `clinica`.`PROC_IN_PACIENTE`('$nome', '$cpf', '$convenio', '$dataNascimento', '$responsavel', '$telefone', '$endereco', '$bairro', '$cidade');";
+
+//mysqli_query($conexao,$result_empresa);
+$insert = mysqli_query ($conexao, $insertPaciente);
 
 
- ?>
+?>
