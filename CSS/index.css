@@ -1,0 +1,21 @@
+
+.topo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    background-color: #FF530D;
+  }
+  
+  body{
+      background-image: url("Capturar2.PNG");
+  }
+
+  .conteudo{
+    margin: 10px 30px;
+  }
+
+  .conteudo2{
+    margin: 10px 100px;
+
+  }

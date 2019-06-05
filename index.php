@@ -10,90 +10,57 @@
   <title>Cadastro de paciente</title>
 
   <!- Imports -!>
-    <link rel="stylesheet" type="text/css" href="./css/css-cadastroEmpresa.css">
+    <link rel="stylesheet" type="text/css" href="CSS/index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
 </head>
 
 <body>
 
-  
-<!-- Menu  navbar -->
-      
-<a href="consulta.php"> 
-   <button class="btn btn-outline-info buttons">Marcar Consulta</button>   <!--botao ok-->
-</a>
-    <div class="topo">
-      <div>
-        <h2><i class="material-icons" style="font-size: 32px; color: green">add_circle_outline</i> Cadastro de Paciente</h2>
-      </div>
-    </div>
+<div class= "topo "> <img src="Capturar3.PNG" alt="imagens aleatórias" style="border-radius: 10px";> </div>
 
-    <div class=" flex-center-center">
-      <form method="POST" action="cadastro.php"><!-- Inicio do formulario -->
-         <div class="informacoesesquerda">
-                        
-         <div class="form-row">
-            <div class="form-group col-md-4">
-               <label>Nome do paciente </label><span class="asterisco-ver">*</span>
-               <input type="text" class="form-control" name="nomePaciente" id="nomeEmpresaJS" placeholder="Nome do paciente">
-            </div>
-            <div>   
-               <label >CPF </label><span class="asterisco-ver">*</span>
-               <input type="text" class="form-control" name="cpf" id="cpfJS" placeholder="CPF">
-            </div>  
 
-            <div class="form-group col-md-5"> 
-                <label for="responsavel">Responsável </label><span class="asterisco-ver">*</span>
-                <input type="text" class="form-control" name="responsavel" id="responsavelJS" placeholder="Responsável">
-            </div>
-         </div>
 
-         <div class="form-row">
-            <div class="form-group col-md-4">  
-              <label for="descAtv">Convênio </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="convenio" id="convenioJS" placeholder="Convênio">
-            </div>  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.php">COG</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-            <div class="form-group col-md-4">
-              <label for="telefone">Telefone </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control ttinput" name="telefone" id="telefoneJS" placeholder="Telefone">
-            </div>
-
-            <div class="form-group col-md-4">
-              <label for="telefone">Data de Nascimento </label><span class="asterisco-ver">*</span>
-              <input type="date" class="form-control ttinput" name="dataNascimento" id="dataNascimentoJS" placeholder="Data de Nascimento">
-            </div>
-         </div>
-
-         <div class="form-row">
-            <div class="form-groupcol-md-9">
-              <label for="Endereco">Endereço </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="endereco" id="enderecoJS" placeholder="Endereço">
-            </div> 
-
-            <div class="form-group col-md-3">
-              <label for="bairro">Bairro </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="bairro" id="bairroJS" placeholder="Bairro">
-            </div>
-
-            <div class="form-group col-md-3">
-              <label for="cidade">Cidade </label><span class="asterisco-ver">*</span>
-              <input type="text" class="form-control" name="cidade" id="cidadeJS" placeholder="Cidade">
-            </div>
-         </div>  
-
-          
-          <div class="form-group buttons">
-            <input type="submit" value="Cancelar" class="btn btn-outline-danger buttons">
-            <input type="submit" value="Adicionar" class="btn btn-success buttons">           
-          </div>
-
-        
-      </form>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Paciente
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="cadastro-paciente.html">Cadastrar Paciente</a>
+          <a class="dropdown-item" href="#">Listar Paciente</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Consulta
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="consulta.php">Marcar Consulta</a>
+          <a class="dropdown-item" href="consulta.php">Prontuário</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+    </ul>
+    
   </div>
+</nav>
+  
+
 </body>
 
 </html>
