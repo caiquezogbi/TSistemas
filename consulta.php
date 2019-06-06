@@ -75,12 +75,12 @@
               <input list="nome" name="selPaciente"  class="form-control"/>  
               <datalist id="nome">
                     <?php
-                        $select_paciente = "CALL `clinica`.`PROC_SEL_PACIENTE`();";
-                        $res_select = mysqli_query($conexao, $select_paciente);
-                        while($pac = mysqli_fetch_array($res_select)) {
-                            $selPaciente=$pac['nome'];
-                            echo "<option value='$selPaciente'> $selPaciente</option>";
-                        }   
+                      $select_paciente = "CALL `clinica`.`PROC_SEL_PACIENTE`();";
+                      $res_select = mysqli_query($conexao, $select_paciente);
+                      while($pac = mysqli_fetch_array($res_select)) {
+                        $selPaciente=$pac['nome'];
+                        echo "<option value='$selPaciente'> $selPaciente</option>";
+                      }   
                     ?>
                 </datalist>
             </div>
@@ -120,8 +120,6 @@
             <input type="submit" value="Cancelar" class="btn btn-outline-danger buttons">
             <input type="submit" value="Salvar" class="btn btn-info buttons">           
           </div>
-
-        
       </form>
     </div>
   </div>

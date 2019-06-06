@@ -16,6 +16,6 @@ $insert_consulta = "CALL `clinica`.`PROC_IN_CONSULTA`('$sintomas','$historico', 
 
 $insertConsulta = mysqli_query ($conexao, $insert_consulta);
 
-
+echo $insert_consulta;
     
 ?>
